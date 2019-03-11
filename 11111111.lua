@@ -1,9 +1,7 @@
-local Utility = require("Utility")
-
 local Armlet = {}
 
-local option = Menu.AddOption({"Hero Specific", "Armlet"}, "Auto Toggle", "On/Off")
-local optionFarmMode = Menu.AddOption({"Hero Specific", "Armlet"}, "Farming Mode", "Toggle on armlet when farming (On/Off)")
+local option = Menu.AddOption({"Utility", "Armlet"}, "Auto Toggle", "On/Off")
+local optionFarmMode = Menu.AddOption({"Utility", "Armlet"}, "Farming Mode", "Toggle on armlet when farming (On/Off)")
 
 local safeThreshold = 550
 local dangerousThreshold = 100
