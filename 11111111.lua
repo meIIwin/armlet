@@ -1,7 +1,8 @@
 local armlet = {}
 
-armlet.optionEnable = Menu.AddOptionBool({"Utility", "Armlet"}, "Auto Toggle", "On/Off" false)
-armlet.optionEnableFarmMode = Menu.AddOptionBool({"Utility", "Armlet"}, "Farming Mode", "Toggle on armlet when farming (On/Off)" false)
+armlet.IsToggled = Menu.AddOptionBool({"Utility", "SkyWrathMage"}, "Enabled", false)
+armlet.optionEnable = Menu.AddOptionBool({"Utility", "Armlet"}, "Auto Toggle", false)
+armlet.optionEnableFarmMode = Menu.AddOptionBool({"Utility", "Armlet"}, "Farming Mode", false)
 
 local safeThreshold = 550
 local dangerousThreshold = 100
