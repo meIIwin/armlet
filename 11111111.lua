@@ -1,7 +1,7 @@
-local Armlet = {}
+local armlet = {}
 
-local option = Menu.AddOption({"Utility", "Armlet"}, "Auto Toggle", "On/Off")
-local optionFarmMode = Menu.AddOption({"Utility", "Armlet"}, "Farming Mode", "Toggle on armlet when farming (On/Off)")
+armlet.optionEnable = Menu.AddOptionBool({"Utility", "Armlet"}, "Auto Toggle", "On/Off" false)
+armlet.optionEnableFarmMode = Menu.AddOptionBool({"Utility", "Armlet"}, "Farming Mode", "Toggle on armlet when farming (On/Off)" false)
 
 local safeThreshold = 550
 local dangerousThreshold = 100
@@ -24,7 +24,7 @@ function Armlet.OnPrepareUnitOrders(orders)
     -- toggle on armlet if about to attack
     if not Ability.GetToggleState(item) and (orders.order == Enum.UnitOrder.DOTA_UNIT_ORDER_ATTACK_MOVE or orders.order == Enum.UnitOrder.DOTA_UNIT_ORDER_ATTACK_TARGET) then
         -- disable auto farm mode if the option is turned off
-        if not Menu.IsEnabled(optionFarmMode) and orders.target and NPC.IsCreep(orders.target) then
+        if not Menu.IsEnabled(optionEnableFarmMode) and orders.target and NPC.IsCreep(orders.target) then
             return true
         end
         Ability.Toggle(item)
